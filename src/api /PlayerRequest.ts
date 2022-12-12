@@ -1,4 +1,4 @@
-import { get, post, put } from "./axios";
+import { del, get, post, put } from "./axios";
 import { Player, PlayerList } from './types';
 
 export const listPlayer = () => {
@@ -9,7 +9,7 @@ export const listPlayer = () => {
   return data;
 };
 
-export const createProfessor = async ({nome,
+export const createPlayer = async ({nome,
   dataNascimento,
   apelido,
   email,
@@ -46,13 +46,13 @@ export const createProfessor = async ({nome,
     nomeEstado:nomeEstado,
   };
 
-  let retr = post<Player>("/player", JSON.stringify(player)).then((dat) => {});
-  console.log(retr);
+  let res = post<Player>("/player", JSON.stringify(player)).then((dat) => {});
+  console.log(res);
 
-  return retr;
+  return res;
 };
 
-export const updateProfessor = () => {
+export const updatePlayer = () => {
   let professor = {
     id: null,
     name: "jenifer",
@@ -72,3 +72,7 @@ export const updateProfessor = () => {
 
   let atuazlizacao = put("/professor/29", professor);
 };
+
+export const deletePlayer = (player: Player) =>{
+  let res = del<Player>("/player", player)
+}

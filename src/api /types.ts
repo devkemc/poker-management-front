@@ -1,5 +1,6 @@
 export type PlayerList = Array<Player>;
 export type Player ={
+    id?:number,
     nome:string,
     dataNascimento:string,
     apelido:string,

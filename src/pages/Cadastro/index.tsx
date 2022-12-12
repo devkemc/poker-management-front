@@ -2,13 +2,13 @@ import { useForm } from "react-hook-form";
 import { FormContent, FormContainer, Container } from './styles';
 import { Input } from '../../components/Input/index';
 import { Player } from "../../api /types";
-import { createProfessor } from '../../api /PlayerRequest';
+import { createPlayer } from '../../api /PlayerRequest';
 import { Button } from "../../components/Button";
 export const Cadastro = () =>{
   const {reset, register, handleSubmit} = useForm<Player>()
 
   function handleFormSubmit(dados:Player){
-    createProfessor(dados).then((resp)=> {console.log(resp); alert("cadastro Efetuado"); reset()}
+    createPlayer(dados).then((resp)=> {console.log(resp); alert("cadastro Efetuado"); reset()}
 
     )
   }

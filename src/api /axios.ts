@@ -50,10 +50,10 @@ export const put: <T>(urlId: string, data: {}) => Promise<T> = async (
   return resp;
 };
 
-export const del:<T>(urlId: string) => Promise<T> = async (
-    url,
+export const del:<T>(urlId: string, data:{}) => Promise<T> = async (
+    url, data
   ) => {
-    let response = await api.delete(url);
+    let response = await api.delete(url, {data});
     let resp = await response.data;
     console.log(resp);
   

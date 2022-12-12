@@ -12,6 +12,9 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { Pencil, Eye, Trash } from "phosphor-react";
+import { deletePlayer } from "../../api /PlayerRequest";
+import { Player } from '../../api /types';
+import { useEffect } from 'react';
 type ITable = {
   col: ColumnDef<unknown>[];
   dat: unknown[];
@@ -25,7 +28,9 @@ export const Table = ({ col, dat }: ITable) => {
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
-  function handleDelet(){
+  function handleDelet(index:number){
+    let player = data[index] as Player;
+    deletePlayer(player)
     console.log(data);
     
   }
@@ -61,7 +66,7 @@ export const Table = ({ col, dat }: ITable) => {
                 </Row>
               ))}
               <RowActions>
-                <a onClick={handleDelet}
+                <a onClick={()=>{handleDelet(row.index)}}
                 >
                   <Trash />
                 </a>
