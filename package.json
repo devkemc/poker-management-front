@@ -12,14 +12,22 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.10.16",
+    "@mui/x-data-grid": "^5.17.14",
+    "@tanstack/react-table": "^8.7.0",
+    "@types/styled-components": "^5.1.26",
     "axios": "^1.2.0",
+    "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.40.0",
+    "react-router-dom": "^6.4.4",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
+    "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react": "^2.2.0",
     "typescript": "^4.6.4",
     "vite": "^3.2.3"
