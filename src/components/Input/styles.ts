@@ -2,16 +2,16 @@ import styled from "styled-components";
 
 export const InputLabel = styled.div`
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 1rem;
 `;
 
 export const InputStyledComponent = styled.input`
   width: 100%;
-  height: 1.75rem;
+  height: 0.5rem;
   border-radius: 50px;
   font-size: 0.8rem;
   color: ${(props) => props.theme.black};
-  text-align: center;
+  padding: 1rem;
   border: 1px solid ${(props) => props.theme["blue-400"]};
   background: white;
   :focus {
@@ -23,8 +23,7 @@ export const InputStyledComponent = styled.input`
 `;
 export const Label = styled.label`
   font-family: "Roboto", sans-serif;
-
-  color:black;
+  color:white;
   font-weight: bold;
   font-size: 1rem;
 `;

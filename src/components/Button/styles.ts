@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const ButtonStyle = styled.button`
   width: 177px;
   height: 35px;
-  border-radius: 50px;
+  border-radius: 10px;
   background: green;
   border: none;
   color: white;
@@ -13,6 +13,6 @@ export const ButtonStyle = styled.button`
   cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   :hover {
-    background-color: #008B8B;
+    background-color: #183800;
   }
 `;

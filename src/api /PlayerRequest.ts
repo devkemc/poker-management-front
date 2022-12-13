@@ -25,7 +25,7 @@ export const createPlayer = async ({nome,
   bairro,
   complemento,
   cep,
-  nomeEstado,}:Player) => {
+  nomeEstado, uf}:Player) => {
   let player = {
     nome : nome,
     dataNascimento : dataNascimento,
@@ -44,6 +44,7 @@ export const createPlayer = async ({nome,
     complemento:complemento,
     cep:cep,
     nomeEstado:nomeEstado,
+    uf:uf
   };
 
   let res = post<Player>("/player", JSON.stringify(player)).then((dat) => {});
@@ -52,27 +53,39 @@ export const createPlayer = async ({nome,
   return res;
 };
 
-export const updatePlayer = () => {
-  let professor = {
-    id: null,
-    name: "jenifer",
-    rg: "50490624",
-    cpf: "48005136854",
-    ddd: "11",
-    phonenumber: "995492899",
-    cep: "08785380",
-    street: "naryciso lucarine",
-    number: "11",
-    district: "bosque",
-    city: "mogi das crutzes",
-    userName: "joqum@l.com",
-    password: "1222456",
-    specialization: "Professor",
+export const updatePlayer = async({id,nome,
+  dataNascimento,
+  apelido,
+  email,
+  cpf,
+  senha,
+  ddd,
+  numeroTelefone,
+  saldo,
+  logradouro,
+  tipoLogradouro,
+  numeroEndereco,
+  nomeCidade,
+  bairro,
+  complemento,
+  cep,
+  nomeEstado, uf}:Player) => {
+    console.log('id', id)
+  let player = {
+    idJogador: id,
+     nome,
+    apelido,
+    cpf,
+    email,
+    senha,
   };
-
-  let atuazlizacao = put("/professor/29", professor);
+  console.log(player);
+  
+  let atuazlizacao = await put<Player>("/player", player);
+  return atuazlizacao
 };
 
-export const deletePlayer = (player: Player) =>{
+export const deletePlayer = ({id,}: Player) =>{
+  let player = {idJogador:id}
   let res = del<Player>("/player", player)
 }

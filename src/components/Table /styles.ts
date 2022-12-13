@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const RowHeader = styled.tr`
-  background: ${(props) => props.theme["White-100"]};
+  background: #111211;
   height: 3rem;
+  color: white;
   max-width: 100%;
 `;
 
@@ -14,18 +15,23 @@ export const Row = styled.td`
   color: black;
 `;
 export const RowActions = styled.td`
-  width: 3rem;
+  display:flex;
+  align-items: center;
+  width: 4rem;
   height: 3rem;
   background: white;
-  color: red;
   text-align: center;
+  gap: 1rem;
+  padding: 0 0.3rem;
+`;
+export const TrashStyled = styled.a`
+  color: red;
   &:hover{
     color: blue;
   }
-`;
+`
 export const TableContainer = styled.div`
   width: 100%;
-  border-radius: 10px;
   border: 1px solid;
   max-height: 100%;
   overflow: auto;
@@ -33,5 +39,5 @@ export const TableContainer = styled.div`
 `;
 export const TableContent = styled.table`
   width: 100%;
-  background: ${(props) => props.theme["White-100"]};
+  background: #676767;
 `;

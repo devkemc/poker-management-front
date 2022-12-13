@@ -18,6 +18,7 @@ export type Player ={
     complemento:string,
     cep:string,
     nomeEstado:string,
+    uf:string,
     create_at:string,
     last_update:string
 }

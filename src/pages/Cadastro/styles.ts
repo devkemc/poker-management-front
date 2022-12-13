@@ -9,13 +9,13 @@ justify-content:space-between;
 
 export const FormContent = styled.div`
 width: 100%;
-border: 1px solid gray;
 border-radius: 50px;
-padding:3rem;
+padding:0 6rem;
 `
 export const Container = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+padding: 1rem;
 
 `

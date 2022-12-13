@@ -1,9 +1,9 @@
 import {
   RowHeader,
-  Row,
   TableContainer,
   TableContent,
   RowActions,
+  TrashStyled,
 } from "./styles";
 import {
   ColumnDef,
@@ -11,16 +11,28 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { Pencil, Eye, Trash } from "phosphor-react";
+import { Trash } from "phosphor-react";
 import { deletePlayer } from "../../api /PlayerRequest";
 import { Player } from '../../api /types';
-import { useEffect } from 'react';
+import { Row } from './styles';
+import { useState } from "react";
+import { AtualizarModal, DataAtualizar } from "../../pages/Atualizar";
+
 type ITable = {
   col: ColumnDef<unknown>[];
   dat: unknown[];
 };
 
+interface playerUpdate{
+  nome:string,
+  apelido:string,
+  email:string,
+  senha:string,
+  cpf:string
+}
+
 export const Table = ({ col, dat }: ITable) => {
+  const [modalIsActive, setModalIsActive] = useState(false)
   const columns = col;
   const data = dat;
   const tableInstace = useReactTable({
@@ -31,7 +43,7 @@ export const Table = ({ col, dat }: ITable) => {
   function handleDelet(index:number){
     let player = data[index] as Player;
     deletePlayer(player)
-    console.log(data);
+    console.log(player);
     
   }
   const { getHeaderGroups, getRowModel } = tableInstace;
@@ -66,15 +78,16 @@ export const Table = ({ col, dat }: ITable) => {
                 </Row>
               ))}
               <RowActions>
-                <a onClick={()=>{handleDelet(row.index)}}
-                >
+                <AtualizarModal { ...data[row.index] as DataAtualizar}/>
+                <TrashStyled onClick={()=>{handleDelet(row.index)}}>
                   <Trash />
-                </a>
+                </TrashStyled>
               </RowActions>
             </tr>
           ))}
         </tbody>
       </TableContent>
+      
     </TableContainer>
   );
 };

@@ -25,10 +25,6 @@ export function getColumnsConfig(name: SmartTableName) {
 }
 const Player = [
   {
-    header: "NOME",
-    accessorKey: "nome",
-  },
-  {
     header: "APELIDO",
     accessorKey: "apelido",
   },
@@ -38,18 +34,18 @@ const Player = [
   },
   {
     header: "NASCIMENTO",
-    accessorKey: "dataNascimento",
+    accessorKey: "data_nascimento",
   },
   {
     header: "CPF",
     accessorKey: "cpf",
   },
   {
-    header:"Created_At",
+    header:"DATA CRIAÇÃO",
     accessorKey:"created_at"
   },
   {
-    header:"Last_Update",
+    header:"ULTIMA ALTERAÇÃO",
     accessorKey:"last_update"
   }
   

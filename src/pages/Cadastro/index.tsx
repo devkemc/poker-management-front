@@ -17,14 +17,13 @@ export const Cadastro = () =>{
       <Container>
      
         <FormContainer>
-      
         <FormContent>
             <h2>Dados Pessoais</h2>
         <Input type="text" label='Nome' {...register("nome")}/>
         <Input type="text" label='Apelido'{...register("apelido")}/>
         <Input type="text" label='Email' {...register("email")}/>
-        <Input type="text" label='Senha' {...register("senha")}/>
-        <Input type="text" label='Data Nascimento'{...register("dataNascimento")}/>
+        <Input type="password" label='Senha' {...register("senha")}/>
+        <Input type="date" label='Data Nascimento'{...register("dataNascimento")}/>
         <Input type="text" label='CPF'{...register("cpf")}/>
         <Input type="text" label='DDD' {...register("ddd")}/>
         <Input type="text" label='Numero'{...register("numeroTelefone")}/>
@@ -39,15 +38,16 @@ export const Cadastro = () =>{
         <Input type="text" label='Numero'{...register("numeroEndereco")}/>
         <Input type="text" label='Complemento'{...register("complemento")}/>
         <Input type="text" label='Bairro'{...register("bairro")}/>
-        <Input type="text" label='cidade'{...register("nomeCidade")}/>
-        <Input type="text" label='estado'{...register("nomeEstado")}/>
-        <Input type="text" label='cep'{...register("cep")}/>
+        <Input type="text" label='Cidade'{...register("nomeCidade")}/>
+        <Input type="text" label='Estado'{...register("nomeEstado")}/>
+        <Input type="text" label='Cep'{...register("cep")}/>
+        <Input type ="text" label='Uf'{...register("uf")}/>
        
         
         </FormContent>
         
     </FormContainer>
-    <Button name="cadastrar" type="submit"/>
+    <Button name="Salvar" type="submit"/>
     
     </Container>
     </form>

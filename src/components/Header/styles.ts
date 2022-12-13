@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
-  background: #000;
+ 
   width: 100%;
-  height: 4rem;
+  height: 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15,7 +15,7 @@ text-decoration:none;
 margin: 0 2rem;
 color: white;
 &:hover{
-  color: red;
+  text-decoration: underline;
 }`
 
 export const Div = styled.div`

@@ -15,7 +15,7 @@ export const Input = React.forwardRef<HTMLInputElement, Props>(
     return (
       <InputLabel>
         <Label>{label}</Label>
-        <InputStyledComponent required id={id} {...props} ref={ref} />
+        <InputStyledComponent id={id} {...props} ref={ref} />
       </InputLabel>
     );
   }
